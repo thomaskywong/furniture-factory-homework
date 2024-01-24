@@ -80,4 +80,27 @@ public class FurnitureOrder implements FurnitureOrderInterface {
         }
         return count;
     }
+
+    @Override
+    public String toString() {
+        return "Furniture(orderOfFurniture=" + this.ordersOfFurnitures + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if ( this == obj)
+            return true;
+
+        if (!(obj instanceof FurnitureOrder))
+            return false;
+        
+        FurnitureOrder furnitureOrder = (FurnitureOrder) obj;
+
+        return Objects.equals(this.ordersOfFurnitures, furnitureOrder.getOrderedFurniture());
+    }
+
+    @Override 
+    public int hashCode() {
+        return Objects.hash(this.ordersOfFurnitures);
+    }
 }
